@@ -16,4 +16,14 @@ def hangman():
         
         print("Guess the word:", guessed_word)
         print("Attempts remaining:", attempts)
- hangman()
+        
+        if guessed_word == word:
+            print("Congratulations! You guessed the word correctly.")
+            break
+        
+        guess = input("Enter a letter: ").lower()
+        
+
+
+hangman()
+
