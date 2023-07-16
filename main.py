@@ -23,7 +23,23 @@ def hangman():
         
         guess = input("Enter a letter: ").lower()
         
-
+        if len(guess) != 1:
+            print("Please enter a single letter.")
+            continue
+        
+        if guess in guessed_letters:
+            print("You already guessed that letter. Try again.")
+            continue
+        
+        guessed_letters.append(guess)
+        
+        if guess not in word:
+            attempts -= 1
+            print("Incorrect guess.")
+        
+        print()
+    
+    if attempts == 0:
+        print("Sorry, you lost. The word was:", word)
 
 hangman()
-
